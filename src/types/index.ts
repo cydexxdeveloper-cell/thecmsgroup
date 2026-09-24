@@ -6,3 +6,4 @@ export * from "../data/leadership";
 export * from "../data/infrastructure";
 export * from "../data/compliance";
 export * from "../data/vision";
+export * from "../data/timeline";

@@ -9,6 +9,7 @@ import LeadershipCard from "@/components/ui/LeadershipCard";
 import ValueCard from "@/components/ui/ValueCard";
 import StatsStrip from "@/components/ui/StatsStrip";
 import CTASection from "@/components/ui/CTASection";
+import JourneyTimeline from "@/components/ui/JourneyTimeline";
 import { executiveLeadership, corporateValues } from "@/data/leadership";
 
 export const metadata: Metadata = {
@@ -54,13 +55,13 @@ export default function AboutPage() {
       />
 
       {/* 2. OUR SCALE STRIP */}
-      <section className="relative -mt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full">
+      <section className="relative -mt-8 w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20 z-10">
         <StatsStrip theme="light" />
       </section>
 
       {/* 3. OUR STORY & Scale */}
       <section className="py-16 sm:py-24 bg-white border-b border-[#EEF2F1]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Story Content (7 cols) */}
             <div className="lg:col-span-7 space-y-6">
@@ -75,11 +76,11 @@ export default function AboutPage() {
               </h2>
 
               <p className="text-base text-[#4B6365] leading-relaxed">
-                CMS Group began its pharmaceutical journey in 1991 in Ellisbridge, Ahmedabad, established on an unwavering commitment to genuine medicine dispensing, patient care, and professional pharmaceutical practice. Over more than three decades, that founding principle has expanded into an integrated healthcare ecosystem.
+                CMS Group began its pharmaceutical journey in 1991 with Chandan Medical Stores establishing its foundational prime retail pharmacy outlet in Ellisbridge, Ahmedabad, built on an unwavering commitment to genuine medicine dispensing, patient counseling, and clinical integrity. Over more than three decades, that founding principle has expanded into an integrated healthcare ecosystem.
               </p>
 
               <p className="text-base text-[#4B6365] leading-relaxed">
-                Today, CMS Group encompasses large-scale wholesale operations through Chandan Medical Stores (Ambawadi) commanding a ₹100 Crore turnover, prime stockist entities representing major global pharmaceutical portfolios, specialized healthcare logistics with Veer Pharma (₹30 Crore turnover), and next-generation B2B commerce via MediShah.
+                Today, CMS Group encompasses high-volume wholesale operations and high-traffic prime retail pharmacy outlets through Chandan Medical Stores (Ambawadi ₹100 Crore Central Hub & Ellisbridge flagship store), prime stockist entities representing major global pharmaceutical portfolios, specialized healthcare logistics with Veer Pharma (₹30 Crore turnover), and next-generation B2B commerce via MediShah.
               </p>
 
               {/* Story milestones */}
@@ -132,12 +133,17 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
+
+          {/* 3.1 Interactive Journey Timeline */}
+          <div className="mt-20 pt-16 border-t border-[#EEF2F1]">
+            <JourneyTimeline />
+          </div>
         </div>
       </section>
 
       {/* 4. OUR PHILOSOPHY */}
       <section className="py-16 sm:py-24 bg-[#F7F9F8] border-b border-[#EEF2F1]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20">
           <SectionHeading
             badge="GUIDING PRINCIPLES"
             title="Our Core Corporate"
@@ -177,7 +183,7 @@ export default function AboutPage() {
 
       {/* 5. OUR VALUES */}
       <section className="py-16 sm:py-24 bg-white border-b border-[#EEF2F1]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20">
           <SectionHeading
             badge="ETHICAL STANDARDS"
             title="The Six Values Shaping"
@@ -195,7 +201,7 @@ export default function AboutPage() {
 
       {/* 6. EXECUTIVE LEADERSHIP (Verified Details, Monograms, NO Fake Portraits) */}
       <section className="py-16 sm:py-24 bg-[#F7F9F8] border-b border-[#EEF2F1]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20">
           <SectionHeading
             badge="EXECUTIVE GOVERNANCE"
             title="Group Leadership"

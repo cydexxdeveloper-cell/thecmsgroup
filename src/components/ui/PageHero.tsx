@@ -37,13 +37,13 @@ export default function PageHero({
         }`}
       />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20">
         {/* Breadcrumb */}
         <div className="mb-6">
           <Breadcrumb items={breadcrumbs} lightTheme={isTeal} />
         </div>
 
-        <div className="max-w-3xl">
+        <div className="max-w-4xl lg:max-w-5xl">
           {badge && (
             <div className="inline-flex items-center gap-2 mb-4">
               <span className="w-2 h-2 rounded-full bg-[#FF7900]" />

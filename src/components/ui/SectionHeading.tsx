@@ -21,7 +21,7 @@ export default function SectionHeading({
   const isCenter = align === "center";
 
   return (
-    <div className={`space-y-3 mb-12 ${isCenter ? "text-center max-w-3xl mx-auto" : "max-w-3xl"}`}>
+    <div className={`space-y-3 mb-12 ${isCenter ? "text-center max-w-4xl lg:max-w-5xl mx-auto" : "max-w-4xl lg:max-w-5xl"}`}>
       {badge && (
         <div
           className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${

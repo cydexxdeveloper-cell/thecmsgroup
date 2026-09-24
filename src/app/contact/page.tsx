@@ -1,6 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Phone, MapPin, Building, Clock, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { MapPin, Building, Clock, CheckCircle2 } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ContactCard from "@/components/ui/ContactCard";
@@ -10,7 +10,7 @@ import { executiveLeadership } from "@/data/leadership";
 export const metadata: Metadata = {
   title: "Contact CMS Group | Direct Executive & Commercial Inquiries",
   description:
-    "Direct executive contacts for Keyur Shah (+91 9427620590), Parth Shah (+91 9900290040), and Harvi Shah (+91 8758788066). Headquarters in Ahmedabad, Gujarat, India.",
+    "Direct executive contacts for Keyur Shah (+91 9427620590) and Parth Shah (+91 9900290040), alongside CMS Group executive commercial desk. Headquarters in Ahmedabad, Gujarat, India.",
   alternates: {
     canonical: "/contact",
   },
@@ -33,7 +33,7 @@ export default function ContactPage() {
 
       {/* 2. CORPORATE HQ & DIRECT LEADERSHIP STRIP */}
       <section className="bg-white py-12 border-b border-[#EEF2F1]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 bg-[#F7F9F8] rounded-2xl border border-[#EEF2F1] flex items-start gap-4">
               <div className="w-12 h-12 rounded-xl bg-[#003F43] text-white flex items-center justify-center shrink-0">
@@ -91,7 +91,7 @@ export default function ContactPage() {
 
       {/* 3. DIRECT EXECUTIVE CONTACTS */}
       <section className="py-16 sm:py-24 bg-[#F7F9F8] border-b border-[#EEF2F1]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20">
           <SectionHeading
             badge="DIRECT EXECUTIVE ACCESS"
             title="Direct Leadership"
@@ -109,7 +109,7 @@ export default function ContactPage() {
 
       {/* 4. COMMERCIAL INQUIRY FORM */}
       <section className="py-16 sm:py-24 bg-white border-b border-[#EEF2F1]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Context (5 cols) */}
             <div className="lg:col-span-5 space-y-6">

@@ -31,7 +31,7 @@ export default function CTASection({
       {/* Background graphic */}
       <div className="absolute inset-0 bg-pharma-dots-dark opacity-35 pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20">
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-[#FF7900] text-xs font-bold uppercase tracking-wider border border-white/10">
             <Sparkles className="w-3.5 h-3.5" />

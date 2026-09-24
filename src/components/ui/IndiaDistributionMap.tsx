@@ -47,10 +47,10 @@ export default function IndiaDistributionMap() {
 
           <div className="pt-2 flex flex-wrap items-center gap-4">
             <Link
-              href="/distribution-network"
+              href="/group-companies#stockist-network"
               className="inline-flex items-center gap-2 bg-[#FF7900] hover:bg-[#F68A1E] text-white text-xs sm:text-sm font-bold px-5 py-2.5 rounded-lg shadow-sm transition-colors"
             >
-              <span>Explore Distribution Network</span>
+              <span>Explore Stockist Network</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
             <div className="flex items-center gap-2 text-xs text-gray-300">

@@ -1,8 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Building, Globe, Pill, CheckCircle2, Sparkles, ShieldCheck } from "lucide-react";
+import { ArrowRight, Building, Globe, Pill, CheckCircle2, Sparkles } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { visionInitiatives } from "@/data/vision";
@@ -39,7 +38,7 @@ export default function VisionPage() {
 
       {/* 2. EXPANSION HORIZON OVERVIEW */}
       <section className="bg-white py-12 border-b border-[#EEF2F1]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20">
           <div className="bg-[#FFF4E8] border border-[#FF7900]/20 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="space-y-1">
               <span className="text-xs font-bold text-[#FF7900] uppercase tracking-wider">
@@ -61,7 +60,7 @@ export default function VisionPage() {
 
       {/* 3. THREE MAJOR FUTURE PROJECTS */}
       <section className="py-16 sm:py-24 bg-[#F7F9F8] border-b border-[#EEF2F1]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        <div className="w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20 space-y-16">
           <SectionHeading
             badge="GROWTH VECTORS"
             title="Three Strategic Pillars"
@@ -70,9 +69,8 @@ export default function VisionPage() {
           />
 
           <div className="space-y-12">
-            {visionInitiatives.map((item, idx) => {
+            {visionInitiatives.map((item) => {
               const Icon = initiativeIcons[item.num] || Building;
-              const isEven = idx % 2 === 1;
 
               return (
                 <div

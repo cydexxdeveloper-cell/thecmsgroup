@@ -1,16 +1,12 @@
 import React from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import {
   Warehouse,
   Users,
-  Cpu,
   Truck,
   CheckCircle2,
   ShieldCheck,
-  ThermometerSnowflake,
-  BarChart3,
   Layers,
 } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
@@ -44,7 +40,7 @@ export default function InfrastructurePage() {
 
       {/* 2. SCALE METRIC HIGHLIGHTS */}
       <section className="bg-white py-12 border-b border-[#EEF2F1]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="p-6 bg-[#F7F9F8] rounded-2xl border border-[#EEF2F1]">
               <Warehouse className="w-5 h-5 text-[#003F43] mb-2" />
@@ -79,7 +75,7 @@ export default function InfrastructurePage() {
 
       {/* 3. WAREHOUSING SECTION */}
       <section className="py-16 sm:py-24 bg-[#F7F9F8] border-b border-[#EEF2F1]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20">
           <SectionHeading
             badge="WAREHOUSING NETWORK"
             title="Physical Infrastructure &"
@@ -136,7 +132,7 @@ export default function InfrastructurePage() {
 
       {/* 4. WORKFORCE & HUMAN EXPERTISE */}
       <section className="py-16 sm:py-24 bg-white border-b border-[#EEF2F1]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Visual (5 cols) */}
             <div className="lg:col-span-5 relative">
@@ -223,7 +219,7 @@ export default function InfrastructurePage() {
 
       {/* 5. TECHNOLOGY & ENTERPRISE ERP */}
       <section className="py-16 sm:py-24 bg-[#F7F9F8] border-b border-[#EEF2F1]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20">
           <SectionHeading
             badge="DIGITAL WORKFLOWS"
             title="Enterprise-Grade ERP &"

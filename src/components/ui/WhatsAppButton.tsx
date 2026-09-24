@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { MessageSquare, X, PhoneCall, ChevronRight } from "lucide-react";
+import { MessageSquare, X, ChevronRight } from "lucide-react";
 import { executiveLeadership } from "@/data/leadership";
 
 export default function WhatsAppButton() {
@@ -38,23 +38,25 @@ export default function WhatsAppButton() {
             <p className="text-xs text-[#4B6365] mb-2">
               Select an executive representative to start a direct WhatsApp conversation:
             </p>
-            {executiveLeadership.map((leader) => (
-              <a
-                key={leader.name}
-                href={leader.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between p-2.5 bg-[#F7F9F8] hover:bg-[#EEF2F1] rounded-xl border border-[#EEF2F1] transition-colors group"
-              >
-                <div>
-                  <div className="text-xs font-bold text-[#102D30] group-hover:text-[#003F43]">
-                    {leader.name}
+            {executiveLeadership
+              .filter((leader) => Boolean(leader.whatsappUrl))
+              .map((leader) => (
+                <a
+                  key={leader.name}
+                  href={leader.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between p-2.5 bg-[#F7F9F8] hover:bg-[#EEF2F1] rounded-xl border border-[#EEF2F1] transition-colors group"
+                >
+                  <div>
+                    <div className="text-xs font-bold text-[#102D30] group-hover:text-[#003F43]">
+                      {leader.name}
+                    </div>
+                    <div className="text-[10px] text-[#4B6365]">{leader.phoneFormatted}</div>
                   </div>
-                  <div className="text-[10px] text-[#4B6365]">{leader.phoneFormatted}</div>
-                </div>
-                <ChevronRight className="w-4 h-4 text-emerald-600 group-hover:translate-x-0.5 transition-transform" />
-              </a>
-            ))}
+                  <ChevronRight className="w-4 h-4 text-emerald-600 group-hover:translate-x-0.5 transition-transform" />
+                </a>
+              ))}
           </div>
 
           <div className="mt-3 pt-3 border-t border-[#EEF2F1] text-[10px] text-center text-[#4B6365]">

@@ -25,7 +25,7 @@ export default function StatsStrip({ theme = "light" }: StatsStripProps) {
             }`}
           >
             <div>
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#FF7900] tracking-tight">
+              <div className="text-2xl sm:text-3xl lg:text-3xl xl:text-4xl font-extrabold text-[#FF7900] tracking-tight whitespace-nowrap">
                 {stat.value}
               </div>
               <div className="mt-2 text-sm sm:text-base font-bold leading-tight">

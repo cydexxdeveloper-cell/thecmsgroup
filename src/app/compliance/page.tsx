@@ -1,7 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import {
   ShieldCheck,
   ThermometerSnowflake,
@@ -9,7 +8,6 @@ import {
   Receipt,
   CheckCircle2,
   Building2,
-  AlertTriangle,
 } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -51,7 +49,7 @@ export default function CompliancePage() {
 
       {/* 2. STATUTORY STANDARDS SUMMARY */}
       <section className="bg-white py-12 border-b border-[#EEF2F1]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20">
           <div className="bg-[#F7F9F8] border border-[#EEF2F1] rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="space-y-1">
               <span className="text-xs font-bold text-[#FF7900] uppercase tracking-wider">
@@ -78,7 +76,7 @@ export default function CompliancePage() {
 
       {/* 3. COMPLIANCE PILLARS GRID */}
       <section className="py-16 sm:py-24 bg-[#F7F9F8] border-b border-[#EEF2F1]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20">
           <SectionHeading
             badge="GOVERNANCE FRAMEWORK"
             title="Six Rigorous Pillars of"
@@ -138,7 +136,7 @@ export default function CompliancePage() {
 
       {/* 4. SOURCING INTEGRITY & ANTI-COUNTERFEIT STANDARDS */}
       <section className="py-16 sm:py-24 bg-white border-b border-[#EEF2F1]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Content (7 cols) */}
             <div className="lg:col-span-7 space-y-6">

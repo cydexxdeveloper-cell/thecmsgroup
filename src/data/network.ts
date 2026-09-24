@@ -59,12 +59,12 @@ export const stockistEntities: StockistEntity[] = [
     name: "Madhuram Medicales",
     role: "Stockist Distribution",
     location: "Gandhinagar, Gujarat",
-    established: "1991",
+    established: "1986",
     integrated: "2025",
     facilitySize: "800–1,500 sq. ft.",
     teamSize: "7–10 Team Members",
     description:
-      "Established in 1991 in the state capital of Gandhinagar, integrated into CMS Group in 2025 to anchor regional distribution with a massive multi-segment brand catalog.",
+      "Established in 1986 in the state capital of Gandhinagar, bringing nearly four decades of regional distribution heritage. Strategically integrated into CMS Group in 2025 to anchor regional healthcare supply with an extensive multi-segment brand catalog.",
     brandPortfolio: [
       "Torrent",
       "Encube",
@@ -86,7 +86,7 @@ export const stockistEntities: StockistEntity[] = [
   },
   {
     id: "janta-medical",
-    name: "Janta Medical and General Stores",
+    name: "Janta Medical & General Stores",
     role: "Stockist Distribution",
     location: "Mansa, Gujarat",
     established: "1973",
@@ -94,7 +94,7 @@ export const stockistEntities: StockistEntity[] = [
     facilitySize: "800–1,500 sq. ft.",
     teamSize: "7–10 Team Members",
     description:
-      "A foundational regional distribution cornerstone established in 1973, integrated into CMS Group in 2025, providing half a century of healthcare supply continuity.",
+      "A foundational regional distribution cornerstone established in 1973, bringing over 50 years of uninterrupted pharmaceutical trust across Northern Gujarat. Strategically integrated into CMS Group in 2025.",
     brandPortfolio: [
       "Torrent",
       "Glaxo Pharma / Consumer",

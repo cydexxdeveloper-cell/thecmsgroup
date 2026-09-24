@@ -1,11 +1,11 @@
 export interface Leader {
   name: string;
   role: string;
-  phone: string;
   initials: string;
-  phoneFormatted: string;
-  whatsappUrl: string;
-  telUrl: string;
+  phone?: string;
+  phoneFormatted?: string;
+  whatsappUrl?: string;
+  telUrl?: string;
   responsibilities: string[];
 }
 
@@ -41,11 +41,7 @@ export const executiveLeadership: Leader[] = [
   {
     name: "Harvi Shah",
     role: "Commercial Relations & Digital Ecosystem",
-    phone: "+91 8758788066",
-    phoneFormatted: "+91 87587 88066",
     initials: "HS",
-    telUrl: "tel:+918758788066",
-    whatsappUrl: "https://wa.me/918758788066?text=Hello%20Harvi%20Shah,%20I%20am%20reaching%20out%20via%20CMS%20Group%20corporate%20portal.",
     responsibilities: [
       "Wholesale commerce & institutional partner relations",
       "Digital B2B platform integration & trade transparency",

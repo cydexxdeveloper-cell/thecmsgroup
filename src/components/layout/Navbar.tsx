@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, PhoneCall, ChevronRight } from "lucide-react";
+import { Menu, X, ChevronRight } from "lucide-react";
 import { navigationLinks } from "@/data/navigation";
 
 export default function Navbar() {
@@ -20,11 +20,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu when pathname changes
-  useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [pathname]);
-
   return (
     <>
       <header
@@ -34,41 +29,18 @@ export default function Navbar() {
             : "bg-white border-b border-[#EEF2F1]"
         }`}
       >
-        {/* Top Announcement / Quick Status Bar */}
-        <div className="bg-[#003236] text-white text-xs py-2 px-4 border-b border-[#003F43]/40">
-          <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-            <div className="flex items-center gap-2">
-              <span className="inline-block w-2 h-2 rounded-full bg-[#FF7900] animate-pulse"></span>
-              <span className="font-medium text-gray-200">
-                ₹180+ Cr Combined Group Turnover • Pan-India Healthcare Distribution
-              </span>
-            </div>
-            <div className="flex items-center gap-4 text-gray-300">
-              <span className="hidden md:inline text-gray-400">Headquarters: Ahmedabad, Gujarat</span>
-              <span className="hidden sm:inline">|</span>
-              <a
-                href="tel:+919427620590"
-                className="inline-flex items-center gap-1.5 hover:text-[#FF7900] transition-colors font-medium text-white"
-              >
-                <PhoneCall className="w-3.5 h-3.5 text-[#FF7900]" />
-                +91 94276 20590
-              </a>
-            </div>
-          </div>
-        </div>
-
         {/* Main Navigation Bar */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link
               href="/"
-              className="flex items-center gap-3.5 group focus:outline-none focus:ring-2 focus:ring-[#003F43] rounded-lg p-1"
+              className="flex items-center gap-3.5 group focus:outline-none focus:ring-2 focus:ring-[#003F43] rounded-lg p-1 shrink-0"
             >
-              <div className="relative w-13 h-13 sm:w-14 sm:h-14 shrink-0 transition-transform duration-300 group-hover:scale-105">
+              <div className="relative w-12 h-12 sm:w-14 sm:h-14 shrink-0 transition-transform duration-300 group-hover:scale-105">
                 <Image
                   src="/brand/cms-group-logo.png"
-                  alt="CMS GROUP Logo - A Chain of Medical Stores"
+                  alt="CMS GROUP Logo - A Chain of Medical Stores & Agency"
                   width={56}
                   height={56}
                   priority
@@ -85,49 +57,64 @@ export default function Navbar() {
                   </span>
                 </div>
                 <span className="text-[10px] sm:text-[11px] font-semibold tracking-wider text-[#4B6365] uppercase">
-                  A Chain of Medical Stores
+                  A Chain of Medical Stores & Agency
                 </span>
               </div>
             </Link>
 
-            {/* Desktop Navigation Links */}
-            <nav className="hidden xl:flex items-center gap-1">
-              {navigationLinks.map((link) => {
-                const isActive = pathname === link.href;
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className={`px-3 py-2 text-sm font-semibold rounded-md transition-all duration-200 relative ${
-                      isActive
-                        ? "text-[#003F43] bg-[#EEF2F1] font-bold"
-                        : "text-[#102D30] hover:text-[#003F43] hover:bg-[#F7F9F8]"
-                    }`}
-                  >
-                    {link.title}
-                    {isActive && (
-                      <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-[#FF7900] rounded-full" />
-                    )}
-                  </Link>
-                );
-              })}
-            </nav>
+            {/* Desktop Navigation Cluster: Links + Divider + Primary CTA */}
+            <div className="hidden lg:flex items-center gap-5 xl:gap-8">
+              {/* Desktop Nav Links */}
+              <nav className="flex items-center gap-1 xl:gap-2">
+                {navigationLinks.map((link) => {
+                  const isActive =
+                    pathname === link.href ||
+                    (link.href === "/group-companies" &&
+                      (pathname.startsWith("/group-companies") ||
+                        pathname.startsWith("/distribution-network") ||
+                        pathname.startsWith("/network")));
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className={`px-3 xl:px-3.5 py-2 text-sm xl:text-[15px] font-semibold rounded-lg transition-all duration-200 relative ${
+                        isActive
+                          ? "text-[#003F43] bg-[#EEF2F1] font-bold"
+                          : "text-[#102D30] hover:text-[#003F43] hover:bg-[#F7F9F8]"
+                      }`}
+                    >
+                      {link.title}
+                      {isActive && (
+                        <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-[#FF7900] rounded-full" />
+                      )}
+                    </Link>
+                  );
+                })}
+              </nav>
 
-            {/* CTA Button & Mobile Hamburger */}
-            <div className="flex items-center gap-3">
+              {/* Subtle Elegant Divider */}
+              <div className="h-6 w-px bg-[#DDE4E3]" aria-hidden="true" />
+
+              {/* Primary Header CTA Button: Contact CMS Group */}
               <Link
                 href="/contact"
-                className="hidden sm:inline-flex items-center gap-2 bg-[#003F43] hover:bg-[#003236] text-white text-sm font-semibold px-5 py-2.5 rounded-lg shadow-sm hover:shadow transition-all duration-200 border border-[#003F43] hover:border-[#FF7900]/50"
+                className={`inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl font-bold text-sm shadow-xs transition-all duration-200 border ${
+                  pathname === "/contact"
+                    ? "bg-[#FF7900] text-white border-[#FF7900] shadow-md shadow-[#FF7900]/20"
+                    : "bg-[#003F43] hover:bg-[#002E31] text-white border-[#003F43] hover:border-[#FF7900]/50 hover:shadow-md hover:-translate-y-0.5"
+                }`}
               >
                 <span>Contact CMS Group</span>
                 <ChevronRight className="w-4 h-4 text-[#FF7900]" />
               </Link>
+            </div>
 
-              {/* Mobile Menu Trigger */}
+            {/* Mobile / Tablet Menu Trigger */}
+            <div className="lg:hidden flex items-center gap-2">
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="xl:hidden p-2.5 rounded-lg text-[#003F43] hover:bg-[#EEF2F1] transition-colors focus:outline-none focus:ring-2 focus:ring-[#003F43]"
+                className="p-2.5 rounded-xl text-[#003F43] hover:bg-[#EEF2F1] transition-colors focus:outline-none focus:ring-2 focus:ring-[#003F43]"
                 aria-label="Toggle Navigation Menu"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -139,7 +126,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 xl:hidden">
+        <div className="fixed inset-0 z-40 lg:hidden">
           {/* Backdrop */}
           <div
             className="fixed inset-0 bg-black/50 backdrop-blur-xs transition-opacity"
@@ -163,7 +150,7 @@ export default function Navbar() {
                       CMS <span className="text-[#FF7900]">GROUP</span>
                     </div>
                     <div className="text-[9px] text-[#4B6365] uppercase tracking-wider font-semibold">
-                      A Chain of Medical Stores
+                      A Chain of Medical Stores & Agency
                     </div>
                   </div>
                 </div>
@@ -179,11 +166,17 @@ export default function Navbar() {
               {/* Nav links */}
               <nav className="flex flex-col space-y-1">
                 {navigationLinks.map((link) => {
-                  const isActive = pathname === link.href;
+                  const isActive =
+                    pathname === link.href ||
+                    (link.href === "/group-companies" &&
+                      (pathname.startsWith("/group-companies") ||
+                        pathname.startsWith("/distribution-network") ||
+                        pathname.startsWith("/network")));
                   return (
                     <Link
                       key={link.href}
                       href={link.href}
+                      onClick={() => setMobileMenuOpen(false)}
                       className={`flex items-center justify-between px-3 py-3 rounded-lg text-sm font-semibold transition-colors ${
                         isActive
                           ? "bg-[#003F43] text-white"
@@ -204,6 +197,7 @@ export default function Navbar() {
             <div className="pt-6 border-t border-[#EEF2F1] space-y-3">
               <Link
                 href="/contact"
+                onClick={() => setMobileMenuOpen(false)}
                 className="w-full flex items-center justify-center gap-2 bg-[#FF7900] hover:bg-[#F68A1E] text-white text-sm font-bold py-3 rounded-lg shadow-sm transition-colors"
               >
                 <span>Contact CMS Group</span>

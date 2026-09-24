@@ -7,9 +7,6 @@ import {
   Building2,
   TrendingUp,
   Cpu,
-  Store,
-  Layers,
-  Globe2,
   Warehouse,
   Users,
   CheckCircle2,
@@ -19,31 +16,11 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import CompanyCard from "@/components/ui/CompanyCard";
 import IndiaDistributionMap from "@/components/ui/IndiaDistributionMap";
 import CTASection from "@/components/ui/CTASection";
+import EcosystemPillars from "@/components/ui/EcosystemPillars";
 import { groupCompanies } from "@/data/companies";
 
 export default function HomePage() {
-  const introPillars = [
-    {
-      title: "Retail",
-      icon: Store,
-      desc: "Prime metropolitan pharmacy stores providing prescription medication, patient counseling, and comprehensive OTC offerings.",
-    },
-    {
-      title: "Wholesale",
-      icon: Building2,
-      desc: "High-volume pan-India pharmaceutical supply network serving retail pharmacies, clinics, and institutional healthcare accounts.",
-    },
-    {
-      title: "Stockist Distribution",
-      icon: Layers,
-      desc: "Decades-established stockist operations representing premier multinational and domestic formulation manufacturers.",
-    },
-    {
-      title: "Digital B2B Commerce",
-      icon: Globe2,
-      desc: "Next-generation B2B healthcare commerce via MediShah, driving supply transparency, stock visibility, and digital connectivity.",
-    },
-  ];
+
 
   const whyCards = [
     {
@@ -78,10 +55,10 @@ export default function HomePage() {
       <section className="relative bg-white pt-10 pb-16 lg:py-20 overflow-hidden border-b border-[#EEF2F1]">
         <div className="absolute inset-0 bg-pharma-pattern opacity-40 pointer-events-none" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="relative w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 xl:gap-14 items-center">
             {/* Left Content (7 cols) */}
-            <div className="lg:col-span-7 space-y-6">
+            <div className="lg:col-span-7 space-y-6 xl:space-y-8">
               {/* Subtle Label */}
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#EEF2F1] text-[#003F43] text-xs font-extrabold uppercase tracking-wider border border-[#DDE4E3]">
                 <span className="w-2 h-2 rounded-full bg-[#FF7900]" />
@@ -89,13 +66,13 @@ export default function HomePage() {
               </div>
 
               {/* Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#102D30] tracking-tight leading-[1.12]">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-[#102D30] tracking-tight leading-[1.12]">
                 Powering Healthcare{" "}
                 <span className="text-[#FF7900] block sm:inline">Across India.</span>
               </h1>
 
               {/* Supporting Copy */}
-              <p className="text-base sm:text-lg text-[#4B6365] max-w-2xl leading-relaxed">
+              <p className="text-base sm:text-lg xl:text-xl text-[#4B6365] max-w-3xl leading-relaxed">
                 CMS Group connects leading pharmaceutical manufacturers with retailers, healthcare institutions and businesses through a powerful retail, wholesale, stockist and digital distribution ecosystem.
               </p>
 
@@ -109,10 +86,10 @@ export default function HomePage() {
                   <ArrowRight className="w-4 h-4 text-[#FF7900]" />
                 </Link>
                 <Link
-                  href="/distribution-network"
+                  href="/group-companies"
                   className="inline-flex items-center gap-2 bg-[#F7F9F8] hover:bg-[#EEF2F1] text-[#003F43] border border-[#DDE4E3] text-sm sm:text-base font-bold px-7 py-3.5 rounded-xl transition-all duration-200"
                 >
-                  <span>Our Network</span>
+                  <span>Group & Network</span>
                 </Link>
               </div>
 
@@ -171,13 +148,13 @@ export default function HomePage() {
       </section>
 
       {/* 2. STATISTICS STRIP */}
-      <section className="relative -mt-6 sm:-mt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full">
+      <section className="relative -mt-6 sm:-mt-8 w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20 z-10">
         <StatsStrip theme="teal" />
       </section>
 
       {/* 3. INTRODUCTION: ONE GROUP. A COMPLETE ECOSYSTEM */}
       <section className="py-16 sm:py-24 bg-[#F7F9F8] border-b border-[#EEF2F1]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20">
           <SectionHeading
             badge="GROUP OVERVIEW"
             title="One Group."
@@ -186,39 +163,13 @@ export default function HomePage() {
             align="center"
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {introPillars.map((pillar) => {
-              const Icon = pillar.icon;
-              return (
-                <div
-                  key={pillar.title}
-                  className="bg-white rounded-2xl border border-[#EEF2F1] p-6 hover:shadow-md hover:border-[#003F43]/30 transition-all flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="w-12 h-12 rounded-xl bg-[#EEF2F1] text-[#003F43] flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-lg font-extrabold text-[#102D30] tracking-tight">
-                      {pillar.title}
-                    </h3>
-                    <p className="mt-2 text-xs sm:text-sm text-[#4B6365] leading-relaxed">
-                      {pillar.desc}
-                    </p>
-                  </div>
-                  <div className="mt-4 pt-3 border-t border-[#EEF2F1] flex items-center gap-1.5 text-xs font-semibold text-[#003F43]">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#FF7900]" />
-                    <span>Core Operating Wing</span>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          <EcosystemPillars />
         </div>
       </section>
 
       {/* 4. WHY CMS GROUP */}
       <section className="py-16 sm:py-24 bg-white border-b border-[#EEF2F1]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20">
           <SectionHeading
             badge="INSTITUTIONAL RELIABILITY"
             title="Why Leading Healthcare Partners"
@@ -262,7 +213,7 @@ export default function HomePage() {
 
       {/* 5. GROUP COMPANIES PREVIEW */}
       <section className="py-16 sm:py-24 bg-[#F7F9F8] border-b border-[#EEF2F1]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EEF2F1] text-[#003F43] text-xs font-bold uppercase tracking-wider border border-[#DDE4E3] mb-3">
@@ -280,7 +231,7 @@ export default function HomePage() {
               href="/group-companies"
               className="inline-flex items-center gap-2 text-sm font-bold text-[#003F43] hover:text-[#FF7900] transition-colors shrink-0"
             >
-              <span>Explore Group Companies</span>
+              <span>Explore Group & Network</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -295,7 +246,7 @@ export default function HomePage() {
 
       {/* 6. NETWORK PREVIEW (India Distribution Map Component) */}
       <section className="py-16 sm:py-24 bg-white border-b border-[#EEF2F1]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20">
           <SectionHeading
             badge="GEOGRAPHIC FOOTPRINT"
             title="Pan-India Distribution Network"
@@ -308,7 +259,7 @@ export default function HomePage() {
 
       {/* 7. INFRASTRUCTURE PREVIEW */}
       <section className="py-16 sm:py-24 bg-[#F7F9F8] border-b border-[#EEF2F1]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Visual (6 cols) */}
             <div className="lg:col-span-6 relative">
