@@ -14,6 +14,12 @@ import {
   ExternalLink,
 } from "lucide-react";
 
+export interface EntityBox {
+  label?: string;
+  name: string;
+  tag: string;
+}
+
 export interface PillarData {
   id: string;
   title: string;
@@ -24,6 +30,7 @@ export interface PillarData {
   modalSubtitle: string;
   keyEntities: string;
   keyTag: string;
+  entityBoxes?: EntityBox[];
   highlights: string[];
   href: string;
   ctaText: string;
@@ -40,6 +47,13 @@ export const pillarsData: PillarData[] = [
     modalSubtitle: "Chandan Medical Stores Flagship & Metropolitan Retail Pharmacy Outlets",
     keyEntities: "Chandan Medical Stores (Prime Retail Outlets: Ellisbridge & Ambawadi)",
     keyTag: "Prime Retail Outlets • Est. 1991",
+    entityBoxes: [
+      {
+        label: "Operating Entity / Portfolio",
+        name: "Chandan Medical Stores (Prime Retail Outlets: Ellisbridge & Ambawadi)",
+        tag: "Prime Retail Outlets • Est. 1991",
+      },
+    ],
     highlights: [
       "Prime retail pharmacy outlets operating in key Ahmedabad locations (Ellisbridge & Ambawadi)",
       "Foundational dispensing legacy established in 1991 with 35+ years of continuous community trust",
@@ -60,6 +74,13 @@ export const pillarsData: PillarData[] = [
     modalSubtitle: "Institutional Healthcare Supply & Pan-India Logistics Dispatch",
     keyEntities: "Chandan Medical Stores (Ambawadi Central Hub) & Veer Pharma",
     keyTag: "₹100 Cr + ₹30 Cr Annual Turnover",
+    entityBoxes: [
+      {
+        label: "Operating Entity / Portfolio",
+        name: "Chandan Medical Stores (Ambawadi Central Hub) & Veer Pharma",
+        tag: "₹100 Cr + ₹30 Cr Annual Turnover",
+      },
+    ],
     highlights: [
       "5,000 sq. ft. central logistics & cold-chain fulfillment hub in Ambawadi",
       "₹100 Crore annual wholesale distribution scale",
@@ -76,18 +97,31 @@ export const pillarsData: PillarData[] = [
     desc: "Decades-established stockist operations representing premier multinational and domestic formulation manufacturers.",
     badge: "Core Operating Wing",
     modalTitle: "Integrated Stockist Distribution Network",
-    modalSubtitle: "4 Strategically Integrated Regional Stockist Hubs across Gujarat",
-    keyEntities: "Ketki Distributors • Anuraj Pharma • Madhuram Medicales • Janta Medical",
-    keyTag: "CMS Group Integrated 2025",
+    modalSubtitle: "Foundational Hub & 4 Strategically Integrated Regional Stockist Hubs across Gujarat",
+    keyEntities: "Chandan Medical Stores (Ellisbridge) & 4 Integrated Partner Stockists",
+    keyTag: "Major Stockists",
+    entityBoxes: [
+      {
+        label: "Operating Entity / Portfolio",
+        name: "Chandan Medical Stores (Ellisbridge)",
+        tag: "Major Stockist & Retail • Est. 1991",
+      },
+      {
+        label: "Operating Entity / Portfolio",
+        name: "Ketki Distributors • Anuraj Pharma • Madhuram Medicales • Janta Medical",
+        tag: "CMS Group Integrated 2025",
+      },
+    ],
     highlights: [
-      "Ketki Distributors (Ahmedabad, Est. 1991) — Key multinational pharma distributor",
-      "Anuraj Pharma (Ahmedabad, Est. 2016) — Agile distribution corridors and ethical formulations",
-      "Madhuram Medicales (Gandhinagar, Est. 1986) — Capital city hospital & retail distribution anchor",
-      "Janta Medical & General Stores (Mansa, Est. 1973) — 50+ years of Northern Gujarat regional trust",
-      "Centralized ERP batch tracking, synchronized stock buffer, and compliant GST governance",
+      "Chandan Medical Stores (Ellisbridge, Est. 1991) — Major foundational stockist representing Abbott (7 Divisions), Patanjali, Emami Zandu, Dabur, Torrent, Sun Pharma, Hetero, Dr. Morepen & Ayurvedic majors",
+      "Ketki Distributors (Ahmedabad, Est. 1991) — Key multinational pharma distributor (Pfizer, Abbott, Lupin, USV, Hetero, Charak, Cadila)",
+      "Anuraj Pharma (Ahmedabad, Est. 2016) — Agile distribution corridors and ethical formulations (Alkem, Zuvantas, West-Coast, Hetero)",
+      "Madhuram Medicales (Gandhinagar, Est. 1986) — Capital city hospital & retail distribution anchor (Torrent, Encube)",
+      "Janta Medical & General Stores (Mansa, Est. 1973) — 50+ years of Northern Gujarat regional trust (Zydus, Cadila, Torrent, Cipla, Sun)",
+      "Centralized ERP batch tracking, synchronized stock buffer, and compliant GST governance across all stockist entities",
     ],
     href: "/group-companies#stockist-network",
-    ctaText: "Explore 4 Stockist Partners in Group & Network",
+    ctaText: "Explore Stockist Network in Group & Network",
   },
   {
     id: "digital",
@@ -99,6 +133,13 @@ export const pillarsData: PillarData[] = [
     modalSubtitle: "Next-Generation Digital Medicine Marketplace & Supply Transparency",
     keyEntities: "MediShah Digital Ecosystem",
     keyTag: "Digital Supply Platform",
+    entityBoxes: [
+      {
+        label: "Operating Entity / Portfolio",
+        name: "MediShah Digital Ecosystem",
+        tag: "Digital Supply Platform",
+      },
+    ],
     highlights: [
       "Direct digital ordering platform for licensed retail pharmacies, clinics, and hospitals",
       "Real-time pharmaceutical stock visibility and transparent commercial terms",
@@ -193,11 +234,11 @@ export default function EcosystemPillars() {
           aria-labelledby="modal-headline"
         >
           <div
-            className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-[#EEF2F1] overflow-hidden text-left animate-scale-up"
+            className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-[#EEF2F1] overflow-hidden text-left animate-scale-up max-h-[90vh] flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="bg-[#003236] text-white p-6 sm:p-8 relative">
+            <div className="bg-[#003236] text-white p-6 sm:p-8 relative shrink-0">
               <button
                 type="button"
                 onClick={() => setActivePillar(null)}
@@ -224,20 +265,43 @@ export default function EcosystemPillars() {
             </div>
 
             {/* Modal Body */}
-            <div className="p-6 sm:p-8 space-y-6">
-              {/* Key Entity Info Box */}
-              <div className="p-4 rounded-2xl bg-[#F7F9F8] border border-[#EEF2F1] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                <div>
-                  <span className="text-[11px] font-bold text-[#FF7900] uppercase tracking-wider block">
-                    Operating Entity / Portfolio
-                  </span>
-                  <span className="text-sm sm:text-base font-extrabold text-[#102D30] block mt-0.5">
-                    {activePillar.keyEntities}
-                  </span>
-                </div>
-                <div className="shrink-0 inline-flex items-center px-3 py-1 rounded-full bg-[#EEF2F1] text-[#003F43] text-xs font-bold border border-[#DDE4E3]">
-                  {activePillar.keyTag}
-                </div>
+            <div className="p-6 sm:p-8 space-y-6 overflow-y-auto">
+              {/* Key Entity Info Boxes */}
+              <div className="space-y-3">
+                {activePillar.entityBoxes && activePillar.entityBoxes.length > 0 ? (
+                  activePillar.entityBoxes.map((box) => (
+                    <div
+                      key={box.name}
+                      className="p-4 rounded-2xl bg-[#F7F9F8] border border-[#EEF2F1] flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:border-[#003F43]/30 transition-colors"
+                    >
+                      <div>
+                        <span className="text-[11px] font-bold text-[#FF7900] uppercase tracking-wider block">
+                          {box.label || "Operating Entity / Portfolio"}
+                        </span>
+                        <span className="text-sm sm:text-base font-extrabold text-[#102D30] block mt-0.5">
+                          {box.name}
+                        </span>
+                      </div>
+                      <div className="shrink-0 inline-flex items-center px-3 py-1 rounded-full bg-[#EEF2F1] text-[#003F43] text-xs font-bold border border-[#DDE4E3]">
+                        {box.tag}
+                      </div>
+                    </div>
+                  ))
+                ) : (
+                  <div className="p-4 rounded-2xl bg-[#F7F9F8] border border-[#EEF2F1] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div>
+                      <span className="text-[11px] font-bold text-[#FF7900] uppercase tracking-wider block">
+                        Operating Entity / Portfolio
+                      </span>
+                      <span className="text-sm sm:text-base font-extrabold text-[#102D30] block mt-0.5">
+                        {activePillar.keyEntities}
+                      </span>
+                    </div>
+                    <div className="shrink-0 inline-flex items-center px-3 py-1 rounded-full bg-[#EEF2F1] text-[#003F43] text-xs font-bold border border-[#DDE4E3]">
+                      {activePillar.keyTag}
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Highlights List */}
