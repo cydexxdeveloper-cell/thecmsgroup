@@ -34,6 +34,9 @@ export const metadata: Metadata = {
   creator: "CMS Group",
   publisher: "CMS Group",
   category: "Pharmaceutical Distribution",
+  verification: {
+    google: "7HQ0uQdCuDnpFhFrvGyziRrqCjie9vmS4dlHBTtkBEM",
+  },
   metadataBase: new URL(SITE_URL),
   alternates: {
     canonical: "/",
