@@ -6,7 +6,11 @@ export const metadata: Metadata = {
   description:
     "Explore CMS Group's partner stockist network: Ketki Distributors (Est. 1991), Anuraj Pharma (Est. 2016), Madhuram Medicales (Est. 1986), and Janta Medical (Est. 1973), all integrated into CMS Group in 2025.",
   alternates: {
-    canonical: "/network",
+    canonical: "/group-companies",
+  },
+  robots: {
+    index: false,
+    follow: true,
   },
 };
 

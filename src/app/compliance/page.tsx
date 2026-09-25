@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
+import { pageSocialMetadata } from "@/lib/pageSocialMetadata";
 import Image from "next/image";
 import {
   ShieldCheck,
@@ -10,6 +11,7 @@ import {
   Building2,
 } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
+import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CTASection from "@/components/ui/CTASection";
 import { compliancePillars } from "@/data/compliance";
@@ -21,6 +23,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/compliance",
   },
+  ...pageSocialMetadata({
+    title: "Quality & Compliance | CMS Group Pharmaceutical Governance",
+    description:
+      "CMS Group operates under strict State Food and Drug Control Administration wholesale & retail drug licensing, storage standards, multi-tier batch verification, and direct manufacturer sourcing.",
+    path: "/compliance",
+    image: "/images/medicines.webp",
+    alt: "Pharmaceutical quality and compliance at CMS Group",
+  }),
 };
 
 export default function CompliancePage() {
@@ -37,6 +47,8 @@ export default function CompliancePage() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SeoBreadcrumbs currentName="Quality & Compliance" path="/compliance" />
+
       {/* 1. HERO */}
       <PageHero
         badge="REGULATORY GOVERNANCE"
@@ -192,7 +204,7 @@ export default function CompliancePage() {
               <div className="relative rounded-3xl overflow-hidden border-2 border-[#EEF2F1] shadow-xl group">
                 <Image
                   src="/images/medicines.webp"
-                  alt="Quality Tested Genuine Pharmaceutical Formulations"
+                  alt="Pharmaceutical quality-control laboratory"
                   width={600}
                   height={450}
                   className="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500"

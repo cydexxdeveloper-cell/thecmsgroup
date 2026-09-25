@@ -1,9 +1,11 @@
 import React from "react";
 import type { Metadata } from "next";
+import { pageSocialMetadata } from "@/lib/pageSocialMetadata";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, ShieldCheck, HeartPulse, Building2, TrendingUp } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
+import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import SectionHeading from "@/components/ui/SectionHeading";
 import LeadershipCard from "@/components/ui/LeadershipCard";
 import ValueCard from "@/components/ui/ValueCard";
@@ -19,6 +21,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/about",
   },
+  ...pageSocialMetadata({
+    title: "About CMS Group | Established Pharmaceutical Enterprise Ahmedabad",
+    description:
+      "Learn about CMS Group's legacy since 1991, leadership team, corporate philosophy, and scale across pharmaceutical retail, wholesale, and distribution.",
+    path: "/about",
+    image: "/images/pharmacy-store.webp",
+    alt: "CMS Group pharmaceutical retail and wholesale legacy in Ahmedabad",
+  }),
 };
 
 export default function AboutPage() {
@@ -44,6 +54,8 @@ export default function AboutPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SeoBreadcrumbs currentName="About CMS Group" path="/about" />
+
       {/* 1. HERO */}
       <PageHero
         badge="CORPORATE OVERVIEW & LEGACY"
@@ -80,7 +92,7 @@ export default function AboutPage() {
               </p>
 
               <p className="text-base text-[#4B6365] leading-relaxed">
-                Today, CMS Group encompasses high-volume wholesale operations and high-traffic prime retail pharmacy outlets through Chandan Medical Stores (Ambawadi ₹100 Crore Central Hub & Ellisbridge flagship store), prime stockist entities representing major global pharmaceutical portfolios, specialized healthcare logistics with Veer Pharma (₹30 Crore turnover), and next-generation B2B commerce via MediShah.
+                Today, CMS Group encompasses high-volume wholesale operations and high-traffic prime retail pharmacy outlets through Chandan Medical Stores (Ambawadi ₹100 Crore Central Hub & Ellisbridge flagship store), prime stockist entities representing major global pharmaceutical portfolios, specialized healthcare logistics with Veer Pharma (₹30 Crore turnover), and next-generation B2B commerce via MediShah. Explore the <Link href="/chandan-medical-stores" className="font-bold text-[#003F43] underline decoration-[#FF7900] underline-offset-4">Chandan Medical Stores profile</Link>, <Link href="/pharmaceutical-distributors" className="font-bold text-[#003F43] underline decoration-[#FF7900] underline-offset-4">pharmaceutical distribution services</Link> and <Link href="/medishah" className="font-bold text-[#003F43] underline decoration-[#FF7900] underline-offset-4">MediShah</Link>.
               </p>
 
               {/* Story milestones */}

@@ -1,7 +1,9 @@
 import React from "react";
 import type { Metadata } from "next";
+import { pageSocialMetadata } from "@/lib/pageSocialMetadata";
 import { MapPin, Building, Clock, CheckCircle2 } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
+import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ContactCard from "@/components/ui/ContactCard";
 import ContactForm from "@/components/ui/ContactForm";
@@ -14,6 +16,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/contact",
   },
+  ...pageSocialMetadata({
+    title: "Contact CMS Group | Direct Executive & Commercial Inquiries",
+    description:
+      "Direct executive contacts for Keyur Shah (+91 9427620590) and Parth Shah (+91 9900290040), alongside CMS Group executive commercial desk. Headquarters in Ahmedabad, Gujarat, India.",
+    path: "/contact",
+    image: "/images/distribution.webp",
+    alt: "Contact CMS Group pharmaceutical distribution team",
+  }),
 };
 
 export default function ContactPage() {
@@ -21,6 +31,8 @@ export default function ContactPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SeoBreadcrumbs currentName="Contact CMS Group" path="/contact" />
+
       {/* 1. HERO */}
       <PageHero
         badge="COMMERCIAL LIAISON"
@@ -108,7 +120,7 @@ export default function ContactPage() {
       </section>
 
       {/* 4. COMMERCIAL INQUIRY FORM */}
-      <section className="py-16 sm:py-24 bg-white border-b border-[#EEF2F1]">
+      <section id="contact-form" className="py-16 sm:py-24 bg-white border-b border-[#EEF2F1] scroll-mt-20">
         <div className="w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left Context (5 cols) */}

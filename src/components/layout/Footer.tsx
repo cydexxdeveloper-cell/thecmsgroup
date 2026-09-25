@@ -14,6 +14,9 @@ export default function Footer() {
     { title: "Infrastructure", href: "/infrastructure" },
     { title: "Compliance", href: "/compliance" },
     { title: "Vision", href: "/vision" },
+    { title: "Pharma Distributors", href: "/pharmaceutical-distributors" },
+    { title: "Chandan Medical Stores", href: "/chandan-medical-stores" },
+    { title: "MediShah", href: "/medishah" },
     { title: "Contact", href: "/contact" },
   ];
 
@@ -53,7 +56,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-md font-normal">
-              Empowering healthcare through excellence in pharmaceutical wholesale, prime retail, and agency distribution services.
+              Empowering healthcare through pharmaceutical wholesale, pharmaceutical distribution, prime retail and agency services.
             </p>
           </div>
 

@@ -6,7 +6,11 @@ export const metadata: Metadata = {
   description:
     "Explore CMS Group's unified ecosystem: core companies (Chandan Medical Stores ₹100 Cr, Veer Pharma ₹30 Cr, MediShah) and 4 partner stockists (Ketki Distributors, Anuraj Pharma, Madhuram Medicales, Janta Medical) integrated in 2025.",
   alternates: {
-    canonical: "/distribution-network",
+    canonical: "/group-companies",
+  },
+  robots: {
+    index: false,
+    follow: true,
   },
 };
 

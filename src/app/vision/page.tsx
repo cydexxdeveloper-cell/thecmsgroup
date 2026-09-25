@@ -1,8 +1,10 @@
 import React from "react";
 import type { Metadata } from "next";
+import { pageSocialMetadata } from "@/lib/pageSocialMetadata";
 import Link from "next/link";
 import { ArrowRight, Building, Globe, Pill, CheckCircle2, Sparkles } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
+import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { visionInitiatives } from "@/data/vision";
 
@@ -13,6 +15,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/vision",
   },
+  ...pageSocialMetadata({
+    title: "Future Vision & Expansion | CMS Group Healthcare Initiatives",
+    description:
+      "CMS Group's strategic expansion roadmap: C&F operations, pharmaceutical formulation exports, and specialized generic & specialty therapeutics distribution.",
+    path: "/vision",
+    image: "/images/distribution.webp",
+    alt: "CMS Group future healthcare distribution vision",
+  }),
 };
 
 export default function VisionPage() {
@@ -26,6 +36,8 @@ export default function VisionPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SeoBreadcrumbs currentName="Future Vision" path="/vision" />
+
       {/* 1. HERO */}
       <PageHero
         badge="STRATEGIC ROADMAP"

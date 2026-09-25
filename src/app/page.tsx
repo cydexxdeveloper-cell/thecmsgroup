@@ -8,6 +8,7 @@ import {
   TrendingUp,
   Cpu,
   Warehouse,
+  Truck,
   Users,
   CheckCircle2,
 } from "lucide-react";
@@ -67,13 +68,13 @@ export default function HomePage() {
 
               {/* Headline */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-[#102D30] tracking-tight leading-[1.12]">
-                Powering Healthcare{" "}
-                <span className="text-[#FF7900] block sm:inline">Across India.</span>
+                CMS Group: Pharmaceutical Retail, Wholesale &amp;{" "}
+                <span className="text-[#FF7900] block sm:inline">Distribution in India</span>
               </h1>
 
               {/* Supporting Copy */}
               <p className="text-base sm:text-lg xl:text-xl text-[#4B6365] max-w-3xl leading-relaxed">
-                CMS Group connects leading pharmaceutical manufacturers with retailers, healthcare institutions and businesses through a powerful retail, wholesale, stockist and digital distribution ecosystem.
+                CMS Group connects leading pharmaceutical manufacturers with retailers, healthcare institutions and businesses through a powerful retail, wholesale, stockist and digital distribution ecosystem. Explore our pharmaceutical distributor services, <Link href="/chandan-medical-stores" className="font-bold text-[#003F43] underline decoration-[#FF7900] underline-offset-4">Chandan Medical Stores</Link> and <Link href="/medishah" className="font-bold text-[#003F43] underline decoration-[#FF7900] underline-offset-4">MediShah</Link>.
               </p>
 
               {/* CTAs */}
@@ -164,6 +165,59 @@ export default function HomePage() {
           />
 
           <EcosystemPillars />
+        </div>
+      </section>
+
+      {/* 3.1 SEO SERVICE LINKS */}
+      <section id="business-services" className="py-16 sm:py-24 bg-white border-b border-[#EEF2F1]">
+        <div className="w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 2xl:px-20">
+          <SectionHeading
+            badge="CMS GROUP BUSINESS SERVICES"
+            title="Pharmaceutical wholesalers, distributors"
+            highlightText="and digital medicine commerce."
+            description="Explore the CMS Group companies and capabilities that support pharmacies, hospitals, healthcare institutions and pharmaceutical businesses across India."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            <Link
+              href="/pharmaceutical-distributors"
+              className="group rounded-2xl border border-[#DDE4E3] bg-[#F7F9F8] p-7 hover:bg-white hover:border-[#003F43]/40 hover:shadow-lg transition-all"
+            >
+              <div className="flex items-center justify-between">
+                <div className="w-12 h-12 rounded-xl bg-[#003F43] text-white flex items-center justify-center">
+                  <Truck className="w-6 h-6 text-[#FF7900]" />
+                </div>
+                <ArrowRight className="w-5 h-5 text-[#FF7900] group-hover:translate-x-1 transition-transform" />
+              </div>
+              <h3 className="mt-6 text-xl font-extrabold text-[#102D30]">Pharmaceutical distributors</h3>
+              <p className="mt-2 text-sm text-[#4B6365] leading-relaxed">Wholesale, stockist and pan-India distribution services from Ahmedabad-based CMS Group.</p>
+            </Link>
+            <Link
+              href="/chandan-medical-stores"
+              className="group rounded-2xl border border-[#DDE4E3] bg-[#F7F9F8] p-7 hover:bg-white hover:border-[#003F43]/40 hover:shadow-lg transition-all"
+            >
+              <div className="flex items-center justify-between">
+                <div className="w-12 h-12 rounded-xl bg-[#003F43] text-white flex items-center justify-center">
+                  <Building2 className="w-6 h-6 text-[#FF7900]" />
+                </div>
+                <ArrowRight className="w-5 h-5 text-[#FF7900] group-hover:translate-x-1 transition-transform" />
+              </div>
+              <h3 className="mt-6 text-xl font-extrabold text-[#102D30]">Chandan Medical Stores</h3>
+              <p className="mt-2 text-sm text-[#4B6365] leading-relaxed">Retail pharmacy and wholesale supply across Ambawadi and Ellisbridge, Ahmedabad.</p>
+            </Link>
+            <Link
+              href="/medishah"
+              className="group rounded-2xl border border-[#DDE4E3] bg-[#F7F9F8] p-7 hover:bg-white hover:border-[#003F43]/40 hover:shadow-lg transition-all"
+            >
+              <div className="flex items-center justify-between">
+                <div className="w-12 h-12 rounded-xl bg-[#003F43] text-white flex items-center justify-center">
+                  <Cpu className="w-6 h-6 text-[#FF7900]" />
+                </div>
+                <ArrowRight className="w-5 h-5 text-[#FF7900] group-hover:translate-x-1 transition-transform" />
+              </div>
+              <h3 className="mt-6 text-xl font-extrabold text-[#102D30]">MediShah</h3>
+              <p className="mt-2 text-sm text-[#4B6365] leading-relaxed">Digital B2B medicine commerce and healthcare procurement connectivity.</p>
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -266,7 +320,7 @@ export default function HomePage() {
               <div className="relative rounded-3xl overflow-hidden border-2 border-[#EEF2F1] shadow-xl group">
                 <Image
                   src="/images/warehouse.webp"
-                  alt="CMS Group Flagship Warehouse Facility"
+                  alt="Pharmaceutical warehouse and distribution facility"
                   width={650}
                   height={450}
                   className="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500"

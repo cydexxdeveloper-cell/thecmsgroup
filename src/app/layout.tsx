@@ -3,6 +3,8 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import SeoJsonLd from "@/components/SeoJsonLd";
+import { DEFAULT_DESCRIPTION, SITE_URL, absoluteUrl, organizationJsonLd } from "@/lib/seo";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -12,29 +14,45 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "CMS Group | Pharmaceutical Distribution, Retail & Wholesale India",
-  description:
-    "CMS Group is an Ahmedabad-based pharmaceutical enterprise operating across retail, wholesale, stockist distribution and B2B healthcare commerce with pan-India reach. Combined group turnover ₹180+ Crore.",
+  title: "CMS Group | Pharmaceutical Retail, Wholesale & Distribution India",
+  description: DEFAULT_DESCRIPTION,
   keywords: [
     "CMS Group",
+    "CMS Group India",
+    "CMS Group Ahmedabad",
     "A Chain of Medical Stores & Agency",
-    "Pharmaceutical Distribution India",
-    "Pharma Stockist Ahmedabad",
     "Chandan Medical Stores",
-    "Veer Pharma",
     "MediShah",
-    "Healthcare Supply Chain Gujarat",
+    "pharmaceutical distributors",
+    "pharma distributors",
+    "pharmaceutical wholesalers",
+    "medicine wholesaler Ahmedabad",
+    "bulk medicine distributor",
+    "healthcare supply chain Gujarat",
   ],
   authors: [{ name: "CMS Group" }],
-  metadataBase: new URL("https://thecmsgroup.in"),
+  creator: "CMS Group",
+  publisher: "CMS Group",
+  category: "Pharmaceutical Distribution",
+  metadataBase: new URL(SITE_URL),
   alternates: {
     canonical: "/",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
-    title: "CMS Group | Pharmaceutical Distribution, Retail & Wholesale India",
-    description:
-      "CMS Group connects leading pharmaceutical manufacturers with retailers, healthcare institutions and businesses across India. Combined group turnover ₹180+ Crore.",
-    url: "https://thecmsgroup.in",
+    title: "CMS Group | Pharmaceutical Retail, Wholesale & Distribution India",
+    description: DEFAULT_DESCRIPTION,
+    url: absoluteUrl("/"),
     siteName: "CMS Group",
     locale: "en_IN",
     type: "website",
@@ -49,10 +67,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CMS Group | Pharmaceutical Distribution, Retail & Wholesale India",
-    description:
-      "CMS Group connects leading pharmaceutical manufacturers with retailers, healthcare institutions and businesses across India.",
-    images: ["/brand/cms-group-logo.png"],
+    title: "CMS Group | Pharmaceutical Retail, Wholesale & Distribution India",
+    description: DEFAULT_DESCRIPTION,
+    images: [{ url: "/brand/cms-group-logo.png", alt: "CMS Group logo" }],
   },
   icons: {
     icon: [
@@ -68,48 +85,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // Structured Organization Data (strictly accurate, zero unverified claims)
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "CMS Group",
-    alternateName: "A Chain of Medical Stores & Agency",
-    url: "https://thecmsgroup.in",
-    logo: "https://thecmsgroup.in/brand/cms-group-logo.png",
-    foundingDate: "1991",
-    description:
-      "Ahmedabad-based pharmaceutical group operating across retail, wholesale, stockist distribution and B2B healthcare commerce with pan-India reach.",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Ahmedabad",
-      addressRegion: "Gujarat",
-      addressCountry: "IN",
-    },
-    contactPoint: [
-      {
-        "@type": "ContactPoint",
-        telephone: "+91-9427620590",
-        contactType: "customer service",
-        areaServed: "IN",
-        availableLanguage: ["en", "hi", "gu"],
-      },
-      {
-        "@type": "ContactPoint",
-        telephone: "+91-9900290040",
-        contactType: "sales",
-        areaServed: "IN",
-        availableLanguage: ["en", "hi", "gu"],
-      },
-    ],
-  };
-
   return (
-    <html lang="en" className={`${jakarta.variable} h-full antialiased`}>
+    <html lang="en-IN" className={`${jakarta.variable} h-full antialiased`}>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <SeoJsonLd data={organizationJsonLd} />
       </head>
       <body className="min-h-full flex flex-col bg-white text-[#102D30] font-sans selection:bg-[#003F43] selection:text-white">
         <Navbar />

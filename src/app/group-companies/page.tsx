@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
+import { pageSocialMetadata } from "@/lib/pageSocialMetadata";
 import {
   Layers,
   TrendingUp,
@@ -8,6 +9,7 @@ import {
   Boxes,
 } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
+import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CompanyCard from "@/components/ui/CompanyCard";
 import NetworkCard from "@/components/ui/NetworkCard";
@@ -18,12 +20,20 @@ import { groupCompanies } from "@/data/companies";
 import { stockistEntities } from "@/data/network";
 
 export const metadata: Metadata = {
-  title: "Group Companies & Stockist Network | CMS Group Pharmaceutical Ecosystem",
+  title: "CMS Group Companies & Stockist Network",
   description:
     "Explore CMS Group's unified ecosystem: core companies (Chandan Medical Stores ₹100 Cr, Veer Pharma ₹30 Cr, MediShah) and 4 partner stockists (Ketki Distributors, Anuraj Pharma, Madhuram Medicales, Janta Medical) integrated in 2025.",
   alternates: {
     canonical: "/group-companies",
   },
+  ...pageSocialMetadata({
+    title: "CMS Group Companies & Stockist Network",
+    description:
+      "Explore CMS Group's unified ecosystem: core companies (Chandan Medical Stores ₹100 Cr, Veer Pharma ₹30 Cr, MediShah) and 4 partner stockists (Ketki Distributors, Anuraj Pharma, Madhuram Medicales, Janta Medical) integrated in 2025.",
+    path: "/group-companies",
+    image: "/images/india-network.webp",
+    alt: "CMS Group pharmaceutical companies and stockist network",
+  }),
 };
 
 export default function GroupAndNetworkPage() {
@@ -31,6 +41,8 @@ export default function GroupAndNetworkPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SeoBreadcrumbs currentName="Group Companies & Stockist Network" path="/group-companies" />
+
       {/* 1. HERO */}
       <PageHero
         badge="CORPORATE ECOSYSTEM & LOGISTICS"

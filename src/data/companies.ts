@@ -6,6 +6,7 @@ export interface GroupCompany {
   operations: string;
   scale?: string;
   website?: string;
+  profileHref?: string;
   description: string;
   highlights: string[];
   brandPortfolio?: string[];
@@ -21,6 +22,7 @@ export const groupCompanies: GroupCompany[] = [
     operations: "Prime Retail Outlet & Wholesale Hub — Pan-India",
     scale: "₹100 Crore Turnover",
     website: "https://chandanmedicalstores.com",
+    profileHref: "/chandan-medical-stores",
     category: "Flagship",
     description:
       "The high-volume flagship entity driving large-scale wholesale distribution nationwide alongside a high-traffic prime retail pharmacy outlet in Ambawadi.",
@@ -38,6 +40,7 @@ export const groupCompanies: GroupCompany[] = [
     location: "Ellisbridge, Ahmedabad",
     established: "1991",
     operations: "Prime Retail Pharmacy Outlet & Major Stockist",
+    profileHref: "/chandan-medical-stores",
     category: "Stockist & Retail",
     description:
       "Located at a prime metropolitan location in Ellisbridge with an extensive pharmaceutical and healthcare brand portfolio, serving as the foundational prime retail pharmacy outlet of CMS Group since 1991.",
@@ -90,6 +93,7 @@ export const groupCompanies: GroupCompany[] = [
     established: "2022",
     operations: "Digital B2B Medicine Commerce",
     website: "https://medishah.com",
+    profileHref: "/medishah",
     category: "Digital B2B",
     description:
       "A modern B2B digital ecosystem focused on medicine commerce, trade transparency and supply-chain connectivity across India.",

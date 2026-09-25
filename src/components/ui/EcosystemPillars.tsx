@@ -61,8 +61,8 @@ export const pillarsData: PillarData[] = [
       "100% genuine formulation procurement directly from authorized pharmaceutical manufacturers",
       "Comprehensive inventory covering chronic therapies, critical care, and OTC healthcare lines",
     ],
-    href: "/group-companies#core-companies",
-    ctaText: "Explore Chandan Medical Stores in Group & Network",
+    href: "/chandan-medical-stores",
+    ctaText: "Explore Chandan Medical Stores",
   },
   {
     id: "wholesale",
@@ -87,8 +87,8 @@ export const pillarsData: PillarData[] = [
       "Veer Pharma specialized healthcare logistics scaling to ₹30 Crore turnover",
       "High-throughput dispatch corridors serving hospitals, clinics, and pharmacies nationwide",
     ],
-    href: "/group-companies#core-companies",
-    ctaText: "View Wholesale Operations in Group & Network",
+    href: "/pharmaceutical-distributors",
+    ctaText: "View Pharmaceutical Distribution Services",
   },
   {
     id: "stockist",
@@ -117,7 +117,7 @@ export const pillarsData: PillarData[] = [
       "Ketki Distributors (Ahmedabad, Est. 1991) — Key multinational pharma distributor (Pfizer, Abbott, Lupin, USV, Hetero, Charak, Cadila)",
       "Anuraj Pharma (Ahmedabad, Est. 2016) — Agile distribution corridors and ethical formulations (Alkem, Zuvantas, West-Coast, Hetero)",
       "Madhuram Medicales (Gandhinagar, Est. 1986) — Capital city hospital & retail distribution anchor (Torrent, Encube)",
-      "Janta Medical & General Stores (Mansa, Est. 1973) — 50+ years of Northern Gujarat regional trust (Zydus, Cadila, Torrent, Cipla, Sun)",
+      "Janta Medical & General Stores (Mansa, Est. 1973) — 50+ years of Northern Gujarat regional trust (Torrent, Abbott, Sanofi and other listed portfolio brands)",
       "Centralized ERP batch tracking, synchronized stock buffer, and compliant GST governance across all stockist entities",
     ],
     href: "/group-companies#stockist-network",
@@ -146,8 +146,8 @@ export const pillarsData: PillarData[] = [
       "Seamless digital synchronization with CMS Group central warehousing & stockist inventory",
       "Rapid delivery dispatch corridors expanding across Gujarat and neighboring states",
     ],
-    href: "/group-companies#core-companies",
-    ctaText: "Explore MediShah in Group & Network",
+    href: "/medishah",
+    ctaText: "Explore MediShah",
   },
 ];
 

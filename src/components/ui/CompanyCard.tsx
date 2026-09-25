@@ -115,12 +115,22 @@ export default function CompanyCard({ company, isDetailed = false }: CompanyCard
             CMS Group Strategic Operating Entity
           </span>
         )}
-        <Link
-          href="/contact"
-          className="text-xs font-semibold text-[#4B6365] hover:text-[#003F43] transition-colors"
-        >
-          Inquire →
-        </Link>
+        <div className="flex items-center gap-4">
+          {company.profileHref && (
+            <Link
+              href={company.profileHref}
+              className="text-xs font-semibold text-[#003F43] hover:text-[#FF7900] transition-colors"
+            >
+              View profile →
+            </Link>
+          )}
+          <Link
+            href="/contact"
+            className="text-xs font-semibold text-[#4B6365] hover:text-[#003F43] transition-colors"
+          >
+            Inquire →
+          </Link>
+        </div>
       </div>
     </div>
   );

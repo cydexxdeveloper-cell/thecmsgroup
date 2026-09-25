@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
+import { pageSocialMetadata } from "@/lib/pageSocialMetadata";
 import Image from "next/image";
 import {
   Warehouse,
@@ -10,6 +11,7 @@ import {
   Layers,
 } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
+import SeoBreadcrumbs from "@/components/SeoBreadcrumbs";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CTASection from "@/components/ui/CTASection";
 import { facilitySpecs, erpCapabilities } from "@/data/infrastructure";
@@ -21,6 +23,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/infrastructure",
   },
+  ...pageSocialMetadata({
+    title: "Infrastructure & Logistics | CMS Group Pharmaceutical Facilities",
+    description:
+      "Explore CMS Group's infrastructure: 5,000 sq. ft. flagship Ambawadi hub, regional stockist facilities, 50+ operations team, and enterprise ERP batch traceability.",
+    path: "/infrastructure",
+    image: "/images/warehouse.webp",
+    alt: "CMS Group pharmaceutical warehouse and logistics infrastructure",
+    width: 650,
+  }),
 };
 
 export default function InfrastructurePage() {
@@ -28,6 +39,8 @@ export default function InfrastructurePage() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SeoBreadcrumbs currentName="Infrastructure" path="/infrastructure" />
+
       {/* 1. HERO */}
       <PageHero
         badge="FACILITIES & OPERATIONS"
@@ -139,7 +152,7 @@ export default function InfrastructurePage() {
               <div className="relative rounded-3xl overflow-hidden border-2 border-[#EEF2F1] shadow-xl group">
                 <Image
                   src="/images/team.webp"
-                  alt="CMS Group Operations and Logistics Team"
+                  alt="Pharmaceutical logistics and warehouse team"
                   width={600}
                   height={450}
                   className="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500"

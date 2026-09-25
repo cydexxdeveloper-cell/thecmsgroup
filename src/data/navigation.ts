@@ -19,5 +19,8 @@ export const quickLinks: NavItem[] = [
   { title: "Infrastructure & Supply Chain", href: "/infrastructure" },
   { title: "Quality & Compliance", href: "/compliance" },
   { title: "Future Vision", href: "/vision" },
+  { title: "Pharmaceutical Distributors", href: "/pharmaceutical-distributors" },
+  { title: "Chandan Medical Stores", href: "/chandan-medical-stores" },
+  { title: "MediShah", href: "/medishah" },
   { title: "Contact Us", href: "/contact" },
 ];
